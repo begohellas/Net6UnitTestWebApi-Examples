@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6UnitTestWebApi.API", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6UnitTestWebApi.Tests", "Net6UnitTestWebApi.Tests\Net6UnitTestWebApi.Tests.csproj", "{73BEB80E-7BBB-456C-B7FD-2EA678F038F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6UnitTestWebApi.IntegrationTests", "Net6UnitTestWebApi.IntegrationTests\Net6UnitTestWebApi.IntegrationTests.csproj", "{AB13B27A-DECF-446E-AB4F-0A77B248DC0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{73BEB80E-7BBB-456C-B7FD-2EA678F038F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73BEB80E-7BBB-456C-B7FD-2EA678F038F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73BEB80E-7BBB-456C-B7FD-2EA678F038F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB13B27A-DECF-446E-AB4F-0A77B248DC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB13B27A-DECF-446E-AB4F-0A77B248DC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB13B27A-DECF-446E-AB4F-0A77B248DC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB13B27A-DECF-446E-AB4F-0A77B248DC0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

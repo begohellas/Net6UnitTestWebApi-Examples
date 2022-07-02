@@ -6,14 +6,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Net6UnitTestWebApi.API.Data;
 using Net6UnitTestWebApi.API.Services;
-using Net6UnitTestWebApi.Tests.MockData;
+using Net6UnitTestWebApi.IntegrationTests.MockData;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Net6UnitTestWebApi.Tests.Services;
+namespace Net6UnitTestWebApi.IntegrationTests.Services;
 
 /// <summary>
 /// Test TodoService without provide shared object instances across the tests in the class
+/// Create a new instance of the test class per test
 /// </summary>
 public class TestTodoService : IDisposable
 {
@@ -32,7 +33,7 @@ public class TestTodoService : IDisposable
 
         _dbContext = new MyWorldDbContext(dbcontextOptions);
         _dbContext.Database.EnsureCreated();
-        
+
         // show that in every test execution, the constructor is new istance
         _outputHelper.WriteLine("{0} CTOR: {1}", nameof(TestTodoService), dbName);
     }
@@ -56,7 +57,7 @@ public class TestTodoService : IDisposable
         _dbContext.Todos.AddRange(TodoMockData.GetTodos());
         await _dbContext.SaveChangesAsync();
 
-        var newTodo = TodoMockData.AddTodo();
+        var (newTodo, _) = TodoMockData.AddTodo();
 
         var sut = new TodoService(_dbContext);
 
@@ -70,7 +71,7 @@ public class TestTodoService : IDisposable
     {
         _dbContext.Database.EnsureDeleted();
         _dbContext.Dispose();
-        
+
         _outputHelper.WriteLine("{0} is disposed", nameof(MyWorldDbContext));
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -16,7 +15,7 @@ namespace Net6UnitTestWebApi.Tests.Controllers;
 /// </summary>
 public class TestTodoController
 {
-    private Mock<ITodoService> MockTodoService;
+    private readonly Mock<ITodoService> MockTodoService;
 
     public TestTodoController()
     {
